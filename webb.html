@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<head>
+<title>Corporate Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+img{
+height:85px;
+width:200px;
+
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    height:80px;
+    background:#f7f2ec;
+    padding:5px ;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+	text-align:Right;
+    
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:black;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#00bcd4;
+}
+
+/* MOBILE MENU */
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+  }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#0b1f3a;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        display:none;
+        padding:20px 0;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+}
+
+/* HERO SECTION */
+
+.hero{
+    height:100vh;
+    background-image:url("https://nkld.co.in/wp-content/uploads/2021/05/20.jpg");
+    background-repeat:no-repeat;
+	background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+	
+}
+.hero-content{
+        padding:40px;
+    border-radius:-20px;
+	
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:40px;B
+}
+
+.btn{
+    background:navy;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00B4D8;
+}
+
+/* SECTION COMMON */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+    color:#0b1f3a;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+}
+#about{
+		background:linear-gradient(to bottom,#FFFFFF, #D6EAF8);
+
+}
+.about img{
+    width:450px;
+    height:300px;
+}
+
+@media(max-width:768px){
+    .about{
+        grid-template-columns:1fr;
+    }
+}
+
+/* SERVICES */
+
+.services-container{
+	display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+
+	
+}
+#services{
+	background-color:#CAF0F8;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+    box-shadow:white;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+	background:#42A5F5;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#white;
+}
+
+/* MANUFACTURING EXCELLENCE*/
+
+.stats{
+    display:grid;
+    grid-template-columns:(auto-fit,minmax(200px,1fr));
+    gap:25pX;
+    text-align:center;
+}
+
+.stat-box{
+    background:#CFDDF1;
+    color:black;
+	padding:30px;
+    border-radius:10px;
+	box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+}
+
+.b1{
+width:200px;
+margin:0 auto;
+margin-top:-40px;
+}
+/* CAREERS */
+
+.career{
+
+font-size:20px;
+    text-align:center;
+
+padding:40px 20px;
+background:#F4F4F4;
+transition:transformer 0.5s,
+background 0.5s;
+border-bottom:4px solid transparent;
+}
+.career:hover{
+transformation:translateY(-10px);
+background:#fff;
+border-bottom:4px solid#00B4D8;
+box-shadow:0 10px 20px
+rgba(0,0,0,0.1);
+
+}
+
+.career h2{
+    margin-bottom:20px;
+}
+
+.career p{
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0b1f3a;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer a{
+    color:#00b4d8;
+    text-decoration:none;
+}
+
+.social-icons{
+    margin-top:15px;
+}
+
+.social-icons a{
+    margin:0 10px;
+    color:white;
+    font-size:20px;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+<div class="logo">
+<img src="download.PNG";>
+
+</div>
+
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="menu">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#careers">Careers</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+<h1>Building Future Industries</h1>
+<p>Innovation • Sustainability • Technology</p>
+<a href="#about" class="btn">Learn More</a>
+</div>
+
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section id="about">
+
+<h2 class="section-title">About Us</h2>
+
+<div class="about">
+<img src="https://news-images.dhan.co/welspun-living-announces-senior-management-reshuffle-cdo-resigns-it-head-elevated.jpg" alt="">
+	
+<div>
+<h2>Who We Are</h2>
+<p>is one of India’s fastest-growing global conglomerates. The company works in industries like home textiles, steel pipes, infrastructure, flooring solutions, warehousing, and energy. Also Welspun has recently announced major investments in Gujarat and continues expanding its pipe manufacturing and textile businesses.
+</p>
+<br><br>
+
+<h3><b>Company Highlight</h3></b>
+<p>Presence in 50+ countries
+Around 35,000–40,000 employees
+Group revenue of around US$ 5 billion
+Headquarters in Mumbai
+Major manufacturing facilities in India, USA, and Saudi Arabia.</p>
+<br><br>
+
+<h3><b>Our Vision</h3></b>
+
+<p>
+To become a trusted leader in technology and sustainable business transformation.“Delight our customers through innovation and technology, achieve inclusive and sustainable growth to remain eminent in all our businesses.”
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title">Our Services</h2>
+
+
+<div class="services-container">
+<div class="card">
+<img src="https://www.welspuncorp.com/images/pipe-img.webp">
+<h3>Manufacturing</h3>
+<p>High-quality industrial production solutions.</p>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxeAJDFM1DAQywCwrHfPINFBhYZFJtvnVVHA&s">
+<h3>Technology</h3>
+<p>Digital transformation and smart innovations.</p>
+</div>
+
+<div class="card">
+<img src="https://welspunflooring.com/_next/image?url=%2Fimages%2Fsustainability.webp&w=3840&q=75">
+<h3>Sustainability</h3>
+<p>Eco-friendly and green business initiatives.</p>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyWzrAv8bsV4kRIVdfVXTAXaklTXuvpChdXA&s">
+<h3>Innovation</h3>
+<p>Advanced research and future-ready ideas.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- MANUFACTURING -->
+
+<section id="careers">
+
+
+
+<h2 class="section-title">Manufacturing Excellence</h2>
+
+<div class="stats">
+
+
+<div class="stat-box">
+<img src="https://welspun-uploads.s3.ap-south-1.amazonaws.com/uploads/CA_0346_EON_CHANNEL_9e5787083f.jpg">
+<h2>Carpet Tiles</h2>
+<p>Welspun offers premium, durable, and easy-to-install carpet tiles featuring advanced stain resistance and sound insulation. They come in versatile, eco-friendly designs, making them ideal for high-traffic commercial and modern office spaces.</p>
+</div>
+
+
+<div class="stat-box">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiMGUYCf1zeBRt238kpQfeotTRRmjQEUUXKw&s">
+<h2>Home Furnishing Textiles</h2>
+<p>Welspun Living is a global leader in home textiles, specializing in bath linens (towels, robes, mats) and bedding solutions (sheets, comforters, pillows). They are highly recognized for patented innovations like HygroCotton® (which gets softer with every wash) and supplying major retail chains worldwide.</p>
+</div>
+
+<div class="stat-box">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo8WVDlrx112V-JrYjttE17Z280NLsWG-weA&s">
+<h2>TMT Rebars</h2>
+<p>Welspun Shield TMT rebars offer high strength, superior earthquake resistance, and excellent flexibility due to advanced thermo-mechanical treatment. They also feature outstanding corrosion resistance and weldability, making them ideal for heavy-duty infrastructure and high-rise construction.</p>
+</div>
+
+
+<div class="stat-box">
+<img src="https://tubepipeindia.com/wp-content/uploads/2023/08/Welspun-Corp-2.jpg">
+<h2>Tubes And Bars</h2>
+<p>Welspun manufactures a premium range of integrated stainless steel and alloy steel seamless tubes, pipes, and rolled/bright bars. Engineered for high-precision and extreme environments, they offer excellent corrosion resistance and durability for critical industries like oil and gas, aerospace, and power.</p>
+</div>
+
+<div class="stat-box">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLggmMAJzKlckO6wCVp1709I7Ip1yG1wpgQA&s">
+<h2>Fire Safety Fabrics</h2>
+<p>Welspun manufactures advanced, inherently flame-retardant fire safety fabrics designed for protective gear, thermal liners, and fire blankets. Engineered for extreme heat resistance and durability, they provide crucial thermal defense and moisture barriers for high-risk environments</p>
+
+
+
+
+</div>
+</div>
+</section>
+
+
+<div class="stat-box b1">
+<P>AND MANY MORE</P>
+</div>
+<!-- CAREERS -->
+
+<section>
+
+<div class="career">
+
+<h2>Join Our Team</h2>
+
+<p>
+Join the Journey
+Become part of a company where talent meets opportunity and hard work is recognized. Build your future with a team that believes in excellence, integrity, and progress.
+Start Your Career With Us Today
+</p>
+
+<a href="Registration.html" class="btn">Apply Now</a>
+
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<h2>Contact Us</h2>
+
+<br>
+
+<p>📞 +91 9876543210</p>
+<p>📧 welspuncompany@gmail.com</p>
+<p>📍 varsamedi, Gujarat, India</p>
+
+<div class="social-icons">
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">LinkedIn</a>
+</div>
+
+<br>
+
+<p>© 2026 . All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
