@@ -42,6 +42,7 @@ body{
     align-items:center;
     position:fixed;
     top:0;
+	left:0;
     z-index:1000;
 	box-sizing:border-box;
 }
@@ -103,7 +104,7 @@ body{
     .nav-links.active{
         display:flex;
     }
-			.logo.img{
+			.logo img{
 			width:100px;
 			height:auto;
 			}
@@ -115,7 +116,7 @@ body{
     height:100vh;
     background-image:url("https://nkld.co.in/wp-content/uploads/2021/05/20.jpg");
     background-repeat:no-repeat;
-	height:auto;
+	
 	width:100%;
 	background-size:cover;
     display:flex;
@@ -231,7 +232,7 @@ section{
 
 .stats{
     display:grid;
-    grid-template-columns:(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:25pX;
     text-align:center;
 }
